@@ -1,0 +1,88 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>66</x><y>0</y><w>210</w><h>190</h></coordinates><panel_attributes>Personaje
+--
+- nombre: string
+- vida: int
+_- vidaMaxima: int = 20_
+--
++ daniar(Arma, Personaje): void
++ setArma(Arma): void
++ setArmadura(Armadura): void
++ recargarVida(Comida): void
++ descontarVida(int): void
++ UsarItemsDelIventario(): void
++ agregarItemAlInventario(Item): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>166</x><y>410</y><w>240</w><h>80</h></coordinates><panel_attributes>/Arma/
+--
+
+--
+/+ equipar(Personaje): void/
+/+ daniar(Personaje, EstadoDeSalud): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>416</x><y>410</y><w>150</w><h>100</h></coordinates><panel_attributes>Flecha
+--
+- nombre: string
+- danio: int
+- cantidad: int
+--
++ equipar(Personaje): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>266</x><y>80</y><w>300</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+- inventario</panel_attributes><additional_attributes>220;130;220;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>746</x><y>410</y><w>160</w><h>80</h></coordinates><panel_attributes>Armadura
+--
+- nombre: string
+- defensa: int
+--
++ equipar(Personaje): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>576</x><y>410</y><w>160</w><h>110</h></coordinates><panel_attributes>Comida
+--
+- nombre: string
+- cantVidaQueCura: int
+- cantVecesAUsar: int
+--
++ equipar(Personaje): void
++ descontarUno(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>376</x><y>210</y><w>200</w><h>120</h></coordinates><panel_attributes>&lt;&lt;inerface&gt;&gt;
+/Item/
+--
+
+--
+/+ equipar(Personaje): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>356</x><y>321</y><w>60</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>40;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>426</x><y>321</y><w>70</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>50;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>526</x><y>321</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;70;90</additional_attributes></element><element><id>Relation</id><coordinates><x>566</x><y>321</y><w>210</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;190;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>66</x><y>260</y><w>150</w><h>100</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+EstadoDeSalud
+--
++ VIVO
++ HERIDO
++ MUERTO</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>96</x><y>181</y><w>120</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+- estadoDeSalud</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>6</x><y>580</y><w>230</w><h>100</h></coordinates><panel_attributes>Espada
+--
+- nombre: string
+- danioBase: int
+--
++ equipar(Personaje): void
++ daniar(Personaje, EstadoDeSalud): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>246</x><y>580</y><w>230</w><h>130</h></coordinates><panel_attributes>Hacha
+--
+- nombre: string
+- danioBase: int
+- probabDanioCritico: float
+--
++ equipar(Personaje): void
++ daniar(Personaje, EstadoDeSalud): void
+- golpeCritico(): bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>486</x><y>580</y><w>240</w><h>150</h></coordinates><panel_attributes>Arco
+--
+- nombre: string
+- danioBase: int
+- danioTotal: int
+- felchasEquipadas: int
+--
++ equipar(Personaje): void
++ equiparFlechas(Flecha): void
+- calcularDanioTotal(Flecha): void
++ daniar(Personaje, EstadoDeSalud): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>156</x><y>482</y><w>60</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>276</x><y>482</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>366</x><y>482</y><w>150</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;100</additional_attributes></element><element><id>Relation</id><coordinates><x>496</x><y>501</y><w>70</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+- flechas</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>266</x><y>110</y><w>90</w><h>320</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+- arma</panel_attributes><additional_attributes>40;300;40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>266</x><y>50</y><w>600</w><h>380</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+- armadura</panel_attributes><additional_attributes>520;360;520;10;10;10</additional_attributes></element></diagram>
